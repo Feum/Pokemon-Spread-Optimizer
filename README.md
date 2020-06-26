@@ -1,2 +1,5 @@
 # Pokemon-Spread-Optimizer
-VGC spread optimizer by Federico Umani. This software is a tool for competitive players based on the Jake White calculator.
+VGC spread optimizer by Federico Umani. This software is a tool for Pokemon competitive players built upon the Jake White calculator. It retains all the functions of a normal calculator and adds some other features such as pokemon managing and automatic spread optimization based on two different algorithms. 
+If you want more information on how to use this software, consult the help page.
+If you want to know how the automatic spread optimization is done, consult the info page.
+
