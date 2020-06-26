@@ -6,4 +6,5 @@ If you want to know how the automatic spread optimization is done, consult the i
 # Credits and License
 MIT License.<br>
 Written by Honko. VGC 2015 Update by Tapin and Firestorm. VGC 2016 and onwards done by squirrelboyVGC.<br>
+Cobyla implementation by Michael Powell, Alan Miller, Anders Gustafsson.
 Managing and optimization overlay done by Federico Umani (2020).
