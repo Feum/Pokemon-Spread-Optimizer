@@ -594,6 +594,7 @@ so_closeModal = function (save) {
                 var soglia = parseInt(document.getElementById('textbox').value);
                 var boost = document.getElementById('minicombo').value;
                 var dyna = document.getElementById('dyna').checked;
+                var edyna = document.getElementById('edyna').checked;
                 var move;
                 if (document.getElementById('movecombo') != null)
                     move = document.getElementById('movecombo').value;
@@ -607,6 +608,8 @@ so_closeModal = function (save) {
                 pkmn.constraints.move = move;
                 pkmn.constraints.boost = boost;
                 pkmn.constraints.dyna = dyna;
+                pkmn.isDynamax = edyna; pkmn.moves.forEach(move => { move.isMax = edyna;});
+                
                 
 
             }
@@ -639,6 +642,7 @@ var so_moveSelectHtml = function (yourMove) {
 var so_comboChange = function (value) {
     var html;
     var dynafault = this.so_subject_pkmn.isDynamax ? "checked='checked'" : "";
+    var edynafault = this.so_constraints.get()[so_modal_id].isDynamax ? "checked='checked'" : "";
     if (value === 'max') html = "\
             <input type='radio' id='optim' name='radio' value='optim' checked='checked'>\
             <label for='optim'>Max possible damage</label><br>\
@@ -650,7 +654,8 @@ var so_comboChange = function (value) {
             <option value='-3'>-3</option> <option value='-2'>-2</option> <option value='-1'>-1</option> <option selected='selected' value='+0'>+0</option>  \
             <option value='+1'>+1 </option> <option value='+2'>+2</option> <option value='+3'>+3</option> <option value='+4'>+4</option> \
             <option value='+5'>+5</option> <option value='+6'>+6</option> </select><br>\
-            While <input style='transform: translateY(3px);' type='checkbox'"+dynafault+" id='dyna'><label for='dyna'> I'm Dynamaxed? </label><br>");
+            While <input style='transform: translateY(3px);' type='checkbox'"+dynafault+" id='dyna'><label for='dyna'> I'm Dynamaxed? </label><br>\
+            While <input style='transform: translateY(3px);' type='checkbox'"+edynafault+" id='edyna'><label for='edyna'> enemy is Dynamaxed? </label><br>");
     if (value === 'min') html = "\
             <input type='radio' id='optim' name='radio' value='optim' checked='checked'>\
             <label for='optim'>Least possible damage</label><br>\
@@ -662,7 +667,8 @@ var so_comboChange = function (value) {
             <option value='-3'>-3</option> <option value='-2'>-2</option> <option value='-1'>-1</option> <option selected='selected' value='+0'>+0</option>  \
             <option value='+1'>+1 </option> <option value='+2'>+2</option> <option value='+3'>+3</option> <option value='+4'>+4</option> \
             <option value='+5'>+5</option> <option value='+6'>+6</option> </select>"+
-            ((this.so_subject_pkmn == null) ? '' : "<br>While <input style='transform: translateY(3px);' type='checkbox'"+dynafault+" id='dyna'><label for='dyna'> I'm Dynamaxed? </label><br>");
+            ((this.so_subject_pkmn == null) ? '' : "<br>While <input style='transform: translateY(3px);' type='checkbox'"+dynafault+" id='dyna'><label for='dyna'> I'm Dynamaxed? </label><br>")+
+            "While <input style='transform: translateY(3px);' type='checkbox'"+edynafault+" id='edyna'><label for='edyna'> enemy is Dynamaxed? </label><br>";
     if (value === 'speed') html = "\
             <label style='margin-left:20px' for='minicombo'>Faster when it is at: </label>\
             <select id='minicombo'><option value='-6'>-6</option> <option value='-5'>-5</option> <option value='-4'>-4</option> \
