@@ -47,7 +47,16 @@
         
         </div>
         <div id="sxSidebar" class="sidebar sx"> 
-            <button class="optimize" title="Export" onclick="so_export()" style="margin-left: 55px; margin-bottom:10px">💾</button>
+            <div class="dropdown">
+                <button class="iconbutton" title="Other Options" onclick="so_toggleotheroptions()" style="font-size:large; margin-left: 0px; margin-bottom:10px">⋮</button>
+                <div id="otheroptions" class="dropdown-content">
+                    <a href="#" onclick="so_otheroptions('clearall')">Clear All Data</a>
+                    <a href="#" onclick="so_otheroptions('clearrep')">Clear Repository Only</a>
+                    <a href="#" onclick="so_otheroptions('restoresp')">Restore Starter Pack</a>
+                    <a href="#" onclick="so_otheroptions('importpack')">Add Pokes from File</a>
+                </div>
+            </div>
+            <button class="optimize" title="Export" onclick="so_export()" style=" margin-left:25px; margin-bottom:10px">💾</button>
             <button class="optimize" title="Import" onclick="so_utils.openFile(so_import)">📂</button>
             <div id="sxwrap" class="sxwrap" >
 
