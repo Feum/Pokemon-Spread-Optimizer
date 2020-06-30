@@ -3237,6 +3237,59 @@ var MOVES_SS = $.extend(true, {}, MOVES_SM, {
         type: 'Steel',
         category: 'Special',
     },
+    'Lash Out': {
+        bp: 75,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact:true
+    },
+    'Lash Out (Doubled)': {
+        bp: 150,
+        type: 'Dark',
+        category: 'Physical',
+        makesContact:true
+    },
+    'Hydro Cannon': {
+        bp: 150,
+        type: 'Water',
+        category: 'Special',
+    },
+    'Rock Wrecker': {
+        bp: 150,
+        type: 'Rock',
+        category: 'Physical',
+        isBullet: true
+    },
+    'Mystical Fire': {
+        bp: 75,
+        type: 'Fire',
+        category: 'Special',
+        hasSecondaryEffect: true
+    },
+    'Expanding Force': {
+        bp: 120,
+        type: 'Psychic',
+        category: 'Special',
+        isSpread:true
+    },
+    'Grassy Glide': {
+        bp: 70,
+        type: 'Grass',
+        category: 'Physical',
+        makesContact: true
+    },
+    'Poltergeist': {
+        bp: 110,
+        type: 'Ghost',
+        category: 'Physical'
+    },
+    'Dual Wingbeat': {
+        bp: 40,
+        type: 'Flying',
+        category: 'Physical',
+        isTwoHit: true,
+        makesContact: true
+    },
     'Max Strike': {
         type: 'Normal'
     },
